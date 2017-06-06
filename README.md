@@ -24,9 +24,12 @@ interface ICheckout
 ```
 
 ## Implementation
-The ICheckout interface is implemented in the Checkout class.
+The `ICheckout` interface is implemented in the `Checkout` class.
+
+The Offer Calculations are done in the `ProductOffer` class, The `Checkout` does not need to know how to calculate an offer price.
 
 ## Testing
+
 The project `CheckoutTest` is used to test the `Checkout` implementation. [NUint](https://www.nunit.org/) is used to do the tests.
 
 ## Dependencies
