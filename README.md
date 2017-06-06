@@ -29,4 +29,21 @@ The ICheckout interface is implemented in the Checkout class.
 ## Testing
 The project `CheckoutTest` is used to test the `Checkout` implementation. [NUint](https://www.nunit.org/) is used to do the tests.
 
-##
+## Dependencies
+The following nuget pages are required
+
+| Package                         | Version |
+| ------------------------------- | ------- |
+| Microsoft.NET.Test.Sdk          | 15.0.0  |
+| Microsoft.TestPlatform.TestHost | 15.0.0  |
+| MSTest.TestAdapter              | 1.1.11  |
+| MSTest.TestFramework            | 1.1.11  |
+| xunit                           | 2.2.0   |
+| xunit.abstractions              | 2.0.1   |
+| xunit.assert                    | 2.2.0   |
+| xunit.core                      | 2.2.0   |
+| xunit.extensibility.core        | 2.2.0   |
+| xunit.extensibility.execution   | 2.2.0   |
+| xunit.runner.console            | 2.2.0   |
+| xunit.runner.utility            | 2.2.0   |
+| xunit.runner.visualstudio       | 2.2.0   |
