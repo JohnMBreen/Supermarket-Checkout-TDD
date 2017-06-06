@@ -37,7 +37,7 @@ namespace CheckoutTDDTest
 
             var total = checkout.GetTotalPrice();
 
-            Assert.Equal(total, 0);
+            Assert.Equal(0, total);
         }
 
         [Theory] // The Theory is that products can be scanned
@@ -77,7 +77,7 @@ namespace CheckoutTDDTest
         [InlineData("D", 15)]
         public void Can_Get_Correct_Price_For_Single_Item(string sku, int value)
         {
-            Assert.Equal(IsSingleItem(sku), value);
+            Assert.Equal(value , IsSingleItem(sku));
         }
 
         int IsSingleItem(string sku)
@@ -106,7 +106,7 @@ namespace CheckoutTDDTest
 
             var total = checkout.GetTotalPrice();
 
-            Assert.Equal(total, offerprice);
+            Assert.Equal(offerprice,total);
         }
 
         [Theory]
@@ -123,7 +123,7 @@ namespace CheckoutTDDTest
                 checkout.Scan(sku);
 
             var total = checkout.GetTotalPrice();
-            Assert.Equal(total, value);
+            Assert.Equal(value, total);
         }
 
         // Can Calculate offers correctly for random list of items
@@ -150,7 +150,7 @@ namespace CheckoutTDDTest
             var rnd = new Random();
             itemssku.Split(',').ToList().OrderBy(x => rnd.Next()).ToList().ForEach(x => checkout.Scan(x));
             var total = checkout.GetTotalPrice();
-            Assert.Equal(total, value);
+            Assert.Equal(value, total);
         }
 
     }

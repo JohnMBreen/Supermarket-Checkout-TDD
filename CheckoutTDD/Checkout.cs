@@ -30,7 +30,10 @@ namespace CheckoutTDD
         // Implementation of ICheckout GetTotalPrice method
         public int GetTotalPrice()
         {
-            return -1;
+            int value = 0;
+            foreach (Product product in _ShoppingBasket)
+                value += product.UnitPrice;
+            return value;
         }
     }
 }
