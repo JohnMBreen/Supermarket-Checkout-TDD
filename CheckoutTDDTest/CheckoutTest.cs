@@ -61,7 +61,7 @@ namespace CheckoutTDDTest
             {
                 checkout.Scan(sku);
                 retv = true;
-            }catch(Exception E)
+            }catch(Exception)
             {
                 retv = false;
             }

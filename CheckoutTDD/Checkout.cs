@@ -8,6 +8,7 @@ namespace CheckoutTDD
     {
         private List<Product> _Products;
         private Dictionary<string, ProductOffer> _Offers;
+        private List<Product> _ShoppingBasket = new List<Product>();
         public Checkout() { }
         public Checkout(List<Product> products, Dictionary<string,ProductOffer> offers)
         {
@@ -18,7 +19,11 @@ namespace CheckoutTDD
         // Implementation of ICheckout Scan method
         public void Scan(string item)
         {
-            throw (new Exception("Not Implemented"));
+            Product productitem = _Products.Find(x => x.SKU == item);
+            if (productitem != null)
+                _ShoppingBasket.Add(productitem);
+            else
+                throw (new Exception("Item not found"));
         }
 
 
