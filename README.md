@@ -30,7 +30,7 @@ The Offer Calculations are done in the `ProductOffer` class, The `Checkout` does
 
 ## Testing
 
-The project `CheckoutTest` is used to test the `Checkout` implementation. [NUint](https://www.nunit.org/) is used to do the tests.
+The project `CheckoutTest` is used to test the `Checkout` implementation. [Xuint](https://xunit.github.io/) is used to do the tests.
 
 ## Dependencies
 The following nuget pages are required
