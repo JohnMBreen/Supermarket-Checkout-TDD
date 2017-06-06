@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace CheckoutTDD
 {
@@ -31,8 +32,25 @@ namespace CheckoutTDD
         public int GetTotalPrice()
         {
             int value = 0;
-            foreach (Product product in _ShoppingBasket)
-                value += product.UnitPrice;
+            // As offers are only on single products 
+            // it is 3 of A not 3 of (A or B) etc
+            // So i can just get a count of each product
+            var basketproducts = _ShoppingBasket.GroupBy(x => x.SKU, (sku, items) =>
+                new {
+                    ProductQuantity = items.Count(),
+                    ProductItem = items.First()
+                });
+
+            foreach (var product in basketproducts)
+            {
+                // Check to see if product has an offer
+                if (_Offers.ContainsKey(product.ProductItem.SKU))
+                {
+                    value += _Offers[product.ProductItem.SKU].CalulatePrice(product.ProductItem, product.ProductQuantity);
+                }
+                else
+                    value += product.ProductQuantity * product.ProductItem.UnitPrice;
+            }
             return value;
         }
     }

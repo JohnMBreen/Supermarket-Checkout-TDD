@@ -127,8 +127,8 @@ namespace CheckoutTDDTest
         }
 
         // Can Calculate offers correctly for random list of items
-        // [InlineData("A,A,A,A,A,A,A,A,B,B,B,B,B,B,B,C,C,C,D,D", 565)]
-        // A = 2 x Offer + 2x Unit (2 * 130)  + (2 * 50) = 310
+        // [InlineData("A,A,A,A,A,A,A,A,B,B,B,B,B,B,B,C,C,C,D,D", 615)]
+        // A = 2 x Offer + 2x Unit (2 * 130)  + (2 * 50) = 360
         // B = 3 x Offer + 1 x Unit (3 * 45) + 30 = 165 
         // C 3 x Unit   3 x 20 = 60
         // D 2 x Unit   2 X 15 = 30
@@ -138,7 +138,7 @@ namespace CheckoutTDDTest
         // C 3 x Unit   3 x 20 = 60
         // D 2 x Unit   2 X 15 = 30
         [Theory]
-        [InlineData("A,A,A,A,A,A,A,A,B,B,B,B,B,B,B,C,C,C,D,D", 565 )]
+        [InlineData("A,A,A,A,A,A,A,A,B,B,B,B,B,B,B,C,C,C,D,D", 615 )]
         [InlineData("A,A,B,C,C,C,D,D", 220)]
         public void Can_Calculate_Offers_For_Random_Mixture_of_Items(string itemssku, int value)
         {
